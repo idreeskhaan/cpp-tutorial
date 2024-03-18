@@ -8,7 +8,7 @@ int main()
     double h= 0.6;
     double w = 48000;
     double L = 4.0;
-    double x = 0;
+    double x = L;
     double y = h/2;
     double E= 200E9;
     double I= b*h*h*h/12;
@@ -16,8 +16,8 @@ int main()
 
     double M_max= 384*1000; //max bending moment
     double V_max= 192*1000; //max shear force
-    Sxx= M_max*y/I;
-    //double Sxx= 6*w/std::pow(h, 3)*(L*L - x*x)*y + w*y/h*(4*y*y/(h*h) - 3/5);
+    //Sxx= M_max*y/I;
+    Sxx= 6*w/std::pow(h, 3)*(L*L - x*x)*y + w*y/h*(4*y*y/(h*h) - 3/5);
     Syy= -w/2*(1+y/h)*std::pow((1-2*y/h), 2);
     txy= -6*w/std::pow(h,3)*x*(h*h/4 - y*y);
     
@@ -25,8 +25,6 @@ int main()
     std::cout << "Sxx: " << Sxx << std::endl;
     std::cout << "Syy: " << Syy << std::endl;
     std::cout << "txy: " << txy << std::endl;
-
-    
 
     return 0;
 }
