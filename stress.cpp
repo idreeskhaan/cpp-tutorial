@@ -8,14 +8,20 @@ int main()
     double h= 0.6;
     double w = 48000;
     double L = 4.0;
-    double x = L;
-    double y = h/2;
     double E= 200E9;
-    double I= b*h*h*h/12;
     double Sxx, Syy, txy;
+    double x, y;
 
-    double M_max= 384*1000; //max bending moment
-    double V_max= 192*1000; //max shear force
+    L= 1;
+    h= 1.5;
+    w= 120000;
+    x= L;
+    y= -h/2;
+
+    double I= b*h*h*h/12;
+
+    //double M_max= 384*1000; //max bending moment
+    //double V_max= 192*1000; //max shear force
     //Sxx= M_max*y/I;
     Sxx= 6*w/std::pow(h, 3)*(L*L - x*x)*y + w*y/h*(4*y*y/(h*h) - 3/5);
     Syy= -w/2*(1+y/h)*std::pow((1-2*y/h), 2);

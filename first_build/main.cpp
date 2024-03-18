@@ -4,8 +4,8 @@
 
 int main()
 {
-    std::cout << suqare(3) << std::endl;
+    std::cout << suqare(5) << std::endl;
     std::cout << add(3, 4) << std::endl;
-
+    
     return 0;
 }
